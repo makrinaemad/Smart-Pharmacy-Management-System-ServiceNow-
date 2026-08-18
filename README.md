@@ -61,7 +61,7 @@ Traditional pharmacy operations suffer from:
 |---|---|
 | Inventory Management | Full CRUD on medicine records with expiry and batch tracking |
 | Request Approval | Approve or reject with multi-stage workflow |
-| Low Stock Alerts | Automated detection + reorder creation with priority scoring |
+| Low Stock Alerts | Automated detection |
 | Expiry Monitoring | Daily job classifying medicines as Active / Near Expiry / Expired |
 | Complaint Management | Auto-assignment + replacement order automation |
 | SLA Monitoring | 75% warning + 100% breach notifications |
@@ -93,7 +93,7 @@ Traditional pharmacy operations suffer from:
 ┌──────────────────────▼──────────────────────────────────┐
 │                   DATA MODEL                            │
 │  Pharmacy Medicine · Customer Profile                   │
-│  Customer Complaint · Pharmacy Reorder · sc_req_item    │
+│  Customer Complaint · sc_req_item                       │
 └─────────────────────────────────────────────────────────┘
 ```
 
@@ -108,7 +108,6 @@ Traditional pharmacy operations suffer from:
 | `x_1970979_pharma_0_pharmacy_medicine` | Pharmacy Medicine | — | Medicine inventory |
 | `x_1970979_pharma_0_customer_profile` | Customer Profile | — | Patient profiles |
 | `x_1970979_pharma_0_customer_complaint` | Customer Complaint | Task | Complaint lifecycle |
-| `x_1970979_pharma_0_pharmacy_reorder` | Pharmacy Reorder | Task | Reorder management |
 
 ### OOB Tables Extended
 
@@ -122,13 +121,13 @@ Traditional pharmacy operations suffer from:
 
 ```
 Pharmacy Medicine ◄──────── sc_req_item (RITM)
-       │                         │
-       │                         │
-       ▼                         ▼
-Pharmacy Reorder        Customer Complaint
-                               │
-                               ▼
-                        Replacement RITM
+                                 │
+                                 │
+                                 ▼
+                        Customer Complaint
+                                 │
+                                 ▼
+                         Replacement RITM
 ```
 
 ---
@@ -162,14 +161,11 @@ Pharmacy Reorder        Customer Complaint
 | Medicine State Sync | sc_req_item | Before Insert/Update | Sync stage with OOB state field |
 | Stock Deduction | sc_req_item | Before Update | Deduct stock on Ready for Pickup |
 | Stock Restoration | sc_req_item | Before Update | Restore stock on cancellation |
-| Low Stock Alert | pharmacy_medicine | After Update | Fire event + create reorder |
-| Generate Medicine Batch | pharmacy_reorder | After Update | Create new batch on reorder completion |
+| Low Stock Alert | pharmacy_medicine | After Update | Fire event |
 | Auto-Assign Complaint | customer_complaint | Before Insert | Assign to Pharmacy Admin Group |
 | Map Request to Complaint | customer_complaint | Before Insert | Copy medicine + customer refs |
-| Block Expired Approval ⭐ | sysapproval_approver | Before Update | Block expired medicine approvals |
-| Create Replacement ⭐ | customer_complaint | After Update | Auto-create replacement via Cart API |
-
-> ⭐ Global scope rules
+| Block Expired Approval | sysapproval_approver | Before Update | Block expired medicine approvals |
+| Create Replacement | customer_complaint | After Update | Auto-create replacement via Cart API |
 
 ### Flows (Active)
 
@@ -275,7 +271,6 @@ Pharmacy Complain SLA flow       ← Complaint SLA notifications
 ├── x_1970979_pharma_0_pharmacy_medicine     → CRUD by role
 ├── x_1970979_pharma_0_customer_profile      → Own record for customer
 ├── x_1970979_pharma_0_customer_complaint    → Own record for customer
-├── x_1970979_pharma_0_pharmacy_reorder      → Admin + Pharmacist only
 └── MedicineAvailability (Script Include)    → Execute: all authenticated
 ```
 
@@ -316,10 +311,10 @@ Customer registers → Submits medicine request → Admin approves
 ❌ Insufficient stock at pickup          → Blocked by BR (addErrorMessage)
 ❌ Customer doesn't confirm delivery     → Auto-cancelled after timeout
 ❌ Wrong medicine complaint              → Replacement auto-created via Cart API
-⚠️ Low stock detected                   → Reorder created + admin alerted
-⚠️ Medicine expiring in 30 days         → Status → Near Expiry
-🕐 SLA at 75%                           → Warning email sent
-🚨 SLA at 100%                          → Breach email sent
+⚠️ Low stock detected                    →  admin alerted
+⚠️ Medicine expiring in 30 days          → Status → Near Expiry
+🕐 SLA at 75%                            → Warning email sent
+🚨 SLA at 100%                           → Breach email sent
 ```
 
 ---
@@ -357,7 +352,6 @@ CurVia/
 ├── 📄 README.md
 ├── 📦 update_sets/
 │   ├── sys_remote_update_set_main.xml       ← Main update set
-│   └── sys_remote_update_set_global.xml     ← Global scope rules
 ├── 📚 documentation/
 │   ├── CurVia_Full_Documentation.pdf        ← Complete technical docs
 
@@ -377,7 +371,6 @@ CurVia/
 ```
 All → System Update Sets → Retrieved Update Sets → Import XML
 Upload: sys_remote_update_set_main.xml
-Upload: sys_remote_update_set_global.xml
 ```
 
 **2. Preview & Commit**

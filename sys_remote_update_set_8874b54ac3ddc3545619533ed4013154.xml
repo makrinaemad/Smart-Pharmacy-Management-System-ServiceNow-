@@ -1,0 +1,453 @@
+<?xml version="1.0" encoding="UTF-8"?><unload unload_date="2026-06-07 06:07:23">
+<sys_remote_update_set action="INSERT_OR_UPDATE">
+<application display_value="Pharmacy Management System">7f81de0ac30d8f905619533ed4013110</application>
+<application_name>Pharmacy Management System</application_name>
+<application_scope>x_1970979_pharma_0</application_scope>
+<application_version>1.0.0</application_version>
+<collisions/>
+<commit_date/>
+<deleted/>
+<description>CB_Curvia_MedicineRequest_2026-06-05 08:30:12</description>
+<inserted/>
+<name>CB_Curvia_MedicineRequest_2026-06-05 08:30:12</name>
+<origin_sys_id/>
+<parent display_value=""/>
+<release_date/>
+<remote_base_update_set display_value=""/>
+<remote_parent_id/>
+<remote_sys_id>c1f1c469c3158f145619533ed40131d4</remote_sys_id>
+<state>loaded</state>
+<summary/>
+<sys_class_name>sys_remote_update_set</sys_class_name>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-06-07 06:07:22</sys_created_on>
+<sys_id>8874b54ac3ddc3545619533ed4013154</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-06-07 06:07:22</sys_updated_on>
+<update_set display_value=""/>
+<update_source display_value=""/>
+<updated/>
+</sys_remote_update_set>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Pharmacy Management System">7f81de0ac30d8f905619533ed4013110</application>
+<category>customer</category>
+<comments/>
+<name>catalog_script_client_23acd311c3dd4f145619533ed4013183</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="catalog_script_client"&gt;&lt;catalog_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_catalog&gt;true&lt;/applies_catalog&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;applies_req_item&gt;true&lt;/applies_req_item&gt;&lt;applies_sc_task&gt;true&lt;/applies_sc_task&gt;&lt;applies_target_record&gt;true&lt;/applies_target_record&gt;&lt;applies_to&gt;item&lt;/applies_to&gt;&lt;cat_item display_value="Curvia_MedicineRequest"&gt;10547956c34d03d05619533ed401318d&lt;/cat_item&gt;&lt;cat_variable&gt;IO:d349b0b6c3cd07d05619533ed401317e&lt;/cat_variable&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Pickup Date Validation &lt;/name&gt;&lt;order/&gt;&lt;published_ref/&gt;&lt;script&gt;&lt;![CDATA[function onChange(control, oldValue, newValue, isLoading, isTemplate) {
+   if (isLoading || newValue === '') {
+      return;
+   }
+
+    var selectedDate = getDateFromFormat(newValue, g_user_date_time_format);
+    var now = new Date();
+
+    // Minimum allowed time = now + 1 hour
+    var minTime = new Date(now.getTime() + (60 * 60 * 1000));
+
+    if (selectedDate &lt; minTime) {
+        g_form.showFieldMsg(
+            'preferred_pickup_date',
+            'Preferred pickup date and time must be at least 1 hour from now.',
+            'error'
+        );
+    }
+			else{
+			g_form.hideFieldMsg('preferred_pickup_date', true);
+
+		}
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;catalog_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-06-05 06:13:40&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;23acd311c3dd4f145619533ed4013183&lt;/sys_id&gt;&lt;sys_mod_count&gt;4&lt;/sys_mod_count&gt;&lt;sys_name&gt;Pickup Date Validation &lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Pharmacy Management System" source="x_1970979_pharma_0"&gt;7f81de0ac30d8f905619533ed4013110&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Pharmacy Management System"&gt;7f81de0ac30d8f905619533ed4013110&lt;/sys_scope&gt;&lt;sys_update_name&gt;catalog_script_client_23acd311c3dd4f145619533ed4013183&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-06-05 06:23:58&lt;/sys_updated_on&gt;&lt;table/&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;va_supported&gt;true&lt;/va_supported&gt;&lt;variable_set/&gt;&lt;view/&gt;&lt;/catalog_script_client&gt;&lt;/record_update&gt;</payload>
+<payload_hash>297943129</payload_hash>
+<remote_update_set display_value="CB_Curvia_MedicineRequest_2026-06-05 08:30:12">8874b54ac3ddc3545619533ed4013154</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-06-07 06:07:22</sys_created_on>
+<sys_id>0074b54ac3ddc3545619533ed4013155</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19e96e779d70000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-06-07 06:07:22</sys_updated_on>
+<table/>
+<target_name>Pickup Date Validation </target_name>
+<type>Catalog Client Scripts</type>
+<update_domain>global</update_domain>
+<update_guid>85f1c4699f158f142fe7e8d9858e6eea</update_guid>
+<update_guid_history>85f1c4699f158f142fe7e8d9858e6eea:297943129,b705eb1565118f14effac7b7c24466fb:297943129,1aa46fd1fb118f140b2b4164a3c7e028:616856149,706423d150118f14882abd34a305e044:-1885357937,7cb3e35142118f147592025d05662001:25621679,12c22f9deddd4f14fd8653317f2b41df:204746588,16c22f9d05dd4f14fc555660265b3ad7:-1316507719</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Pharmacy Management System">7f81de0ac30d8f905619533ed4013110</application>
+<category>customer</category>
+<comments/>
+<name>item_option_new_d349b0b6c3cd07d05619533ed401317e</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="item_option_new"&gt;&lt;item_option_new action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;attributes/&gt;&lt;cat_item display_value="Curvia_MedicineRequest"&gt;10547956c34d03d05619533ed401318d&lt;/cat_item&gt;&lt;category/&gt;&lt;choice_direction&gt;down&lt;/choice_direction&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;conversational_label/&gt;&lt;create_roles/&gt;&lt;default_html_value/&gt;&lt;default_value/&gt;&lt;delete_roles/&gt;&lt;delivery_plan/&gt;&lt;description/&gt;&lt;disable_initial_slot_fill&gt;false&lt;/disable_initial_slot_fill&gt;&lt;display_title&gt;false&lt;/display_title&gt;&lt;do_not_select_first&gt;false&lt;/do_not_select_first&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;dynamic_value_dot_walk_path/&gt;&lt;dynamic_value_field/&gt;&lt;enable_also_request_for&gt;false&lt;/enable_also_request_for&gt;&lt;example_text/&gt;&lt;field/&gt;&lt;global&gt;false&lt;/global&gt;&lt;help_tag&gt;More information&lt;/help_tag&gt;&lt;help_text/&gt;&lt;hidden&gt;false&lt;/hidden&gt;&lt;include_none&gt;false&lt;/include_none&gt;&lt;instructions/&gt;&lt;layout&gt;normal&lt;/layout&gt;&lt;list_table/&gt;&lt;lookup_dependent_question/&gt;&lt;lookup_label/&gt;&lt;lookup_price/&gt;&lt;lookup_source/&gt;&lt;lookup_table/&gt;&lt;lookup_unique&gt;false&lt;/lookup_unique&gt;&lt;lookup_value/&gt;&lt;macro/&gt;&lt;macroponent/&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;map_to_field&gt;false&lt;/map_to_field&gt;&lt;mask_use_confirmation&gt;false&lt;/mask_use_confirmation&gt;&lt;mask_use_encryption&gt;false&lt;/mask_use_encryption&gt;&lt;name&gt;preferred_pickup_date&lt;/name&gt;&lt;not_available_conversation&gt;false&lt;/not_available_conversation&gt;&lt;order&gt;200&lt;/order&gt;&lt;post_insert_script/&gt;&lt;price_if_checked&gt;0&lt;/price_if_checked&gt;&lt;pricing_implications&gt;false&lt;/pricing_implications&gt;&lt;published_ref/&gt;&lt;question_text&gt;Preferred Pickup Date&lt;/question_text&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;read_script/&gt;&lt;rec_lookup_price/&gt;&lt;rec_price_if_checked&gt;0&lt;/rec_price_if_checked&gt;&lt;record/&gt;&lt;record_producer_table/&gt;&lt;reference/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;rich_text/&gt;&lt;roles_to_use_also_request_for/&gt;&lt;save_script&gt;&lt;![CDATA[/** This script is executed before the Record is generated
+* `current`- GlideRecord produced by Record Producer
+* Don't use `current.update()` or `current.insert()` as the record is generated by Record Producer
+* Don't use `current.setValue('sys_class_name', 'xxx')` as this will trigger reparent flow and can cause data loss
+* Avoid `current.setAbortAction()` and generate a separate record
+* Use `producer.var1` to access variables
+*/]]&gt;&lt;/save_script&gt;&lt;scale_max&gt;5&lt;/scale_max&gt;&lt;scale_min&gt;0&lt;/scale_min&gt;&lt;show_help&gt;false&lt;/show_help&gt;&lt;show_help_on_load&gt;false&lt;/show_help_on_load&gt;&lt;sp_widget/&gt;&lt;summary_macro/&gt;&lt;sys_class_name&gt;item_option_new&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-05-27 23:31:01&lt;/sys_created_on&gt;&lt;sys_id&gt;d349b0b6c3cd07d05619533ed401317e&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;Preferred Pickup Date&lt;/sys_name&gt;&lt;sys_package display_value="Pharmacy Management System" source="x_1970979_pharma_0"&gt;7f81de0ac30d8f905619533ed4013110&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Pharmacy Management System"&gt;7f81de0ac30d8f905619533ed4013110&lt;/sys_scope&gt;&lt;sys_update_name&gt;item_option_new_d349b0b6c3cd07d05619533ed401317e&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-06-05 06:14:02&lt;/sys_updated_on&gt;&lt;table/&gt;&lt;tooltip/&gt;&lt;topic_block/&gt;&lt;type&gt;10&lt;/type&gt;&lt;ui_page/&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;validate_regex/&gt;&lt;variable_name/&gt;&lt;variable_set/&gt;&lt;variable_width/&gt;&lt;visibility&gt;1&lt;/visibility&gt;&lt;visible_bundle&gt;true&lt;/visible_bundle&gt;&lt;visible_guide&gt;true&lt;/visible_guide&gt;&lt;visible_standalone&gt;true&lt;/visible_standalone&gt;&lt;visible_summary&gt;true&lt;/visible_summary&gt;&lt;write_roles/&gt;&lt;/item_option_new&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=d349b0b6c3cd07d05619533ed401317e"/&gt;&lt;fx_price action="delete_multiple" query="id=d349b0b6c3cd07d05619533ed401317e"/&gt;&lt;fx_price action="INSERT_OR_UPDATE"&gt;&lt;amount&gt;0&lt;/amount&gt;&lt;currency display_value="USD"&gt;USD&lt;/currency&gt;&lt;field&gt;price_if_checked&lt;/field&gt;&lt;id&gt;d349b0b6c3cd07d05619533ed401317e&lt;/id&gt;&lt;parent/&gt;&lt;reference_amount&gt;0&lt;/reference_amount&gt;&lt;reference_currency display_value="USD"&gt;USD&lt;/reference_currency&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-05-27 23:31:02&lt;/sys_created_on&gt;&lt;sys_id&gt;f4d974f6c3cd07d05619533ed40131ec&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-05-27 23:31:02&lt;/sys_updated_on&gt;&lt;table&gt;item_option_new&lt;/table&gt;&lt;type&gt;calculated&lt;/type&gt;&lt;/fx_price&gt;&lt;fx_price action="INSERT_OR_UPDATE"&gt;&lt;amount&gt;0&lt;/amount&gt;&lt;currency display_value="USD"&gt;USD&lt;/currency&gt;&lt;field&gt;rec_price_if_checked&lt;/field&gt;&lt;id&gt;d349b0b6c3cd07d05619533ed401317e&lt;/id&gt;&lt;parent/&gt;&lt;reference_amount&gt;0&lt;/reference_amount&gt;&lt;reference_currency display_value="USD"&gt;USD&lt;/reference_currency&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-05-27 23:31:02&lt;/sys_created_on&gt;&lt;sys_id&gt;bcd974f6c3cd07d05619533ed40131eb&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-05-27 23:31:02&lt;/sys_updated_on&gt;&lt;table&gt;item_option_new&lt;/table&gt;&lt;type&gt;calculated&lt;/type&gt;&lt;/fx_price&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-34263918</payload_hash>
+<remote_update_set display_value="CB_Curvia_MedicineRequest_2026-06-05 08:30:12">8874b54ac3ddc3545619533ed4013154</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-06-07 06:07:22</sys_created_on>
+<sys_id>1874358ac3ddc3545619533ed4013122</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19e96e783830000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-06-07 06:07:22</sys_updated_on>
+<table/>
+<target_name>Preferred Pickup Date</target_name>
+<type>Variable</type>
+<update_domain>global</update_domain>
+<update_guid>adf14869ca158f149c06c7990d7bc954</update_guid>
+<update_guid_history>adf14869ca158f149c06c7990d7bc954:-34263918,83c26f9deedd4f141cf5c36b6d36e5a4:-34263918,2a0d18b87519c71481ad20996b22b96c:-1604307663,81d974f65ccd07d01f5bfb8ef764fdff:1120615888</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Pharmacy Management System">7f81de0ac30d8f905619533ed4013110</application>
+<category>customer</category>
+<comments/>
+<name>sc_cat_item_user_criteria_no_mtom_5b0535d6c34d03d05619533ed4013178</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_user_criteria_no_mtom"><sc_cat_item_user_criteria_no_mtom action="INSERT_OR_UPDATE"><sc_cat_item display_value="Curvia_MedicineRequest">10547956c34d03d05619533ed401318d</sc_cat_item><sys_class_name>sc_cat_item_user_criteria_no_mtom</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-05-26 14:32:49</sys_created_on><sys_id>5b0535d6c34d03d05619533ed4013178</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Curvia_MedicineRequest.SNC External</sys_name><sys_package display_value="Pharmacy Management System" source="x_1970979_pharma_0">7f81de0ac30d8f905619533ed4013110</sys_package><sys_policy/><sys_scope display_value="Pharmacy Management System">7f81de0ac30d8f905619533ed4013110</sys_scope><sys_update_name>sc_cat_item_user_criteria_no_mtom_5b0535d6c34d03d05619533ed4013178</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-05-26 14:32:49</sys_updated_on><user_criteria display_value="SNC External">66c1b50e730333009508738234f6a7c9</user_criteria></sc_cat_item_user_criteria_no_mtom></record_update>]]></payload>
+<payload_hash>500881668</payload_hash>
+<remote_update_set display_value="CB_Curvia_MedicineRequest_2026-06-05 08:30:12">8874b54ac3ddc3545619533ed4013154</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-06-07 06:07:22</sys_created_on>
+<sys_id>1c74358ac3ddc3545619533ed4013123</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19e96e77c9f0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-06-07 06:07:22</sys_updated_on>
+<table/>
+<target_name>Curvia_MedicineRequest.SNC External</target_name>
+<type>Catalog Item Not Available for</type>
+<update_domain>global</update_domain>
+<update_guid>d5f10869e4158f1461cda6961fe03444</update_guid>
+<update_guid_history>d5f10869e4158f1461cda6961fe03444:500881668,702e1c769cc907d09d2f8681c40692ef:500881668</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Pharmacy Management System">7f81de0ac30d8f905619533ed4013110</application>
+<category>customer</category>
+<comments/>
+<name>catalog_script_client_b9131f52c3c943d05619533ed4013193</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update sys_domain="global" table="catalog_script_client"&gt;&lt;catalog_script_client action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;applies_catalog&gt;true&lt;/applies_catalog&gt;&lt;applies_extended&gt;false&lt;/applies_extended&gt;&lt;applies_req_item&gt;false&lt;/applies_req_item&gt;&lt;applies_sc_task&gt;false&lt;/applies_sc_task&gt;&lt;applies_target_record&gt;false&lt;/applies_target_record&gt;&lt;applies_to&gt;item&lt;/applies_to&gt;&lt;cat_item display_value="Curvia_MedicineRequest"&gt;10547956c34d03d05619533ed401318d&lt;/cat_item&gt;&lt;cat_variable&gt;IO:067e5cb6c3c907d05619533ed40131c1&lt;/cat_variable&gt;&lt;condition/&gt;&lt;description/&gt;&lt;field/&gt;&lt;global&gt;true&lt;/global&gt;&lt;isolate_script&gt;true&lt;/isolate_script&gt;&lt;messages/&gt;&lt;name&gt;Medicine Availability&lt;/name&gt;&lt;order/&gt;&lt;published_ref/&gt;&lt;script&gt;&lt;![CDATA[// // function onChange(control, oldValue, newValue, isLoading) {
+// //     if (isLoading || !newValue) return;
+// //         var requestedQty = 1;
+// //     var qtyInput = document.querySelector('.sc-cart-quantity input') || 
+// //                    document.querySelector('[id*="quantity"]') ||
+// //                    document.querySelector('input[aria-label="Quantity"]');
+    
+// //     if (qtyInput) {
+// //         requestedQty = parseInt(qtyInput.value) || 1;
+// //     }
+// //     var ga = new GlideAjax('x_1970979_pharma_0.MedicineAvailability');
+// //     ga.addParam('sysparm_name', 'checkAvailability');
+// //     ga.addParam('sysparm_medicine_name', newValue);
+// //     ga.getXMLAnswer(function(answer) {
+// //     var result = JSON.parse(answer);
+// //         if (result.status === 'available') {
+// //             g_form.showFieldMsg('medicine_name', 
+// //                 'Available, ' + result.quantity + ' units in stock', 'info');
+// //         } else if (result.status === 'low') {
+// //             g_form.showFieldMsg('medicine_name', 
+// //                 'Low Stock, only ' + result.quantity +'here ' +requestedQty+' units left', 'warning');
+// //         } else if (result.status === 'expired') {
+// //             g_form.showFieldMsg('medicine_name', 
+// //                 'Expired, cannot be requested', 'error');
+// //         } else {
+// //             g_form.showFieldMsg('medicine_name', 
+// //                 'Not Found, please check the medicine name', 'error');
+// //         }
+// //     });
+// // }
+
+// var selectedQuantity = 1;
+
+// function onChange(control, oldValue, newValue, isLoading) {
+//     if (isLoading) return;
+
+//     // Track quantity changes
+//     if (control === 'quantity') {
+//         selectedQuantity = parseInt(newValue) || 1;
+        
+//         // Re-check availability if medicine is already selected
+//         var currentMedicine = g_form.getValue('medicine_name');
+//         if (currentMedicine) {
+//             checkMedicineAvailability(currentMedicine, selectedQuantity);
+//         }
+//         return;
+//     }
+
+//     // Handle medicine_name changes
+//     if (control === 'medicine_name') {
+//         if (!newValue) return;
+//         checkMedicineAvailability(newValue, selectedQuantity);
+//     }
+// }
+
+// function checkMedicineAvailability(medicineName, requestedQty) {
+//     var ga = new GlideAjax('x_1970979_pharma_0.MedicineAvailability');
+//     ga.addParam('sysparm_name', 'checkAvailability');
+//     ga.addParam('sysparm_medicine_name', medicineName);
+//     ga.addParam('sysparm_requested_qty', requestedQty);
+//     ga.getXMLAnswer(function(answer) {
+//         var result = JSON.parse(answer);
+
+//         if (result.status === 'available') {
+//             g_form.showFieldMsg('medicine_name',
+//                 'Available, ' + result.quantity + ' units in stock', 'info');
+
+//         } else if (result.status === 'low') {
+//             g_form.showFieldMsg('medicine_name',
+//                 'Low Stock, only ' + result.quantity + ' units left', 'warning');
+
+//         } else if (result.status === 'insufficient') {
+//             g_form.showFieldMsg('medicine_name',
+//                 'Insufficient Stock, you requested ' + requestedQty + 
+//                 ' but only ' + result.quantity + ' available', 'error');
+
+//         } else if (result.status === 'expired') {
+//             g_form.showFieldMsg('medicine_name',
+//                 'Expired, cannot be requested', 'error');
+
+//         } else {
+//             g_form.showFieldMsg('medicine_name',
+//                 'Not Found, please check the medicine name', 'error');
+//         }
+//     });
+// }
+
+function onChange(control, oldValue, newValue, isLoading) {
+    if (isLoading || !newValue) return;
+
+    // Get quantity - works in Service Portal
+    var requestedQty = 1;
+    
+    try {
+        // Method 1: g_form.getControl (most reliable in SP)
+        var qtyControl = g_form.getControl('quantity');
+        if (qtyControl) {
+            requestedQty = parseInt(qtyControl.value) || 1;
+        }
+    } catch(e) {}
+
+    try {
+        // Method 2: Angular scope fallback
+        if (requestedQty === 1) {
+            var qtyEl = document.querySelector('.quantity-input input') ||
+                        document.querySelector('[name="sysparm_quantity"]') ||
+                        document.querySelector('input.ng-valid[min="1"]');
+            if (qtyEl) requestedQty = parseInt(qtyEl.value) || 1;
+        }
+    } catch(e) {}
+
+    checkMedicineAvailability(newValue, requestedQty);
+}
+
+function checkMedicineAvailability(medicineName, requestedQty) {
+    var ga = new GlideAjax('x_1970979_pharma_0.MedicineAvailability');
+    ga.addParam('sysparm_name', 'checkAvailability');
+    ga.addParam('sysparm_medicine_name', medicineName);
+    ga.addParam('sysparm_requested_qty', requestedQty);
+    ga.getXMLAnswer(function(answer) {
+        var result = JSON.parse(answer);
+
+        if (result.status === 'available') {
+            g_form.showFieldMsg('medicine_name',
+                'Available, ' + result.quantity + ' units in stock', 'info');
+
+        } else if (result.status === 'low') {
+            if (requestedQty &gt; result.quantity) {
+                g_form.showFieldMsg('medicine_name',
+                    'Insufficient Stock, you requested ' + requestedQty +
+                    ' but only ' + result.quantity + ' units left', 'error');
+            } else {
+                g_form.showFieldMsg('medicine_name',
+                    'Low Stock, only ' + result.quantity + ' units left'+ requestedQty +
+                    ' but only ' , 'warning');
+					g_cart.setQuantity(10);
+            }
+
+        } else if (result.status === 'expired') {
+            g_form.showFieldMsg('medicine_name',
+                'Expired, cannot be requested', 'error');
+
+        } else {
+            g_form.showFieldMsg('medicine_name',
+                'Not Found, please check the medicine name', 'error');
+        }
+    });
+}]]&gt;&lt;/script&gt;&lt;sys_class_name&gt;catalog_script_client&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-05-26 21:32:45&lt;/sys_created_on&gt;&lt;sys_domain&gt;global&lt;/sys_domain&gt;&lt;sys_domain_path&gt;/&lt;/sys_domain_path&gt;&lt;sys_id&gt;b9131f52c3c943d05619533ed4013193&lt;/sys_id&gt;&lt;sys_mod_count&gt;27&lt;/sys_mod_count&gt;&lt;sys_name&gt;Medicine Availability&lt;/sys_name&gt;&lt;sys_overrides/&gt;&lt;sys_package display_value="Pharmacy Management System" source="x_1970979_pharma_0"&gt;7f81de0ac30d8f905619533ed4013110&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Pharmacy Management System"&gt;7f81de0ac30d8f905619533ed4013110&lt;/sys_scope&gt;&lt;sys_update_name&gt;catalog_script_client_b9131f52c3c943d05619533ed4013193&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-06-05 08:10:06&lt;/sys_updated_on&gt;&lt;table/&gt;&lt;type&gt;onChange&lt;/type&gt;&lt;ui_type&gt;10&lt;/ui_type&gt;&lt;va_supported&gt;false&lt;/va_supported&gt;&lt;variable_set/&gt;&lt;view/&gt;&lt;/catalog_script_client&gt;&lt;/record_update&gt;</payload>
+<payload_hash>1030789418</payload_hash>
+<remote_update_set display_value="CB_Curvia_MedicineRequest_2026-06-05 08:30:12">8874b54ac3ddc3545619533ed4013154</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-06-07 06:07:22</sys_created_on>
+<sys_id>4474b54ac3ddc3545619533ed4013155</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19e96e779f70000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-06-07 06:07:22</sys_updated_on>
+<table/>
+<target_name>Medicine Availability</target_name>
+<type>Catalog Client Scripts</type>
+<update_domain>global</update_domain>
+<update_guid>c9f1c46902158f1444dd790f34be63ec</update_guid>
+<update_guid_history>c9f1c46902158f1444dd790f34be63ec:1030789418,ae5d7b9de3d18f14a247aa27c7447d32:1030789418,97cbff9999d18f146fbf0a7212d222b0:-1791241839,195b7f5951d18f143b17fdee930b86b4:1613682660,4b0a3f9537d18f14a11bfbf5629af4f0:-176841224,b56937557ed18f14af9146725eaca9bc:-2129576341,fbb8fbd19ed18f1450df052963beebef:-214877366,cefcafd590518f14482a4e27799534e7:-507295530,0ecce7d5db518f14821842cb94c69d80:-724869131,049caf952d518f1482a0ed5f6f81e7c2:1571307315,8e4be3d157518f14d50870788df8cabf:1371454920,790dd4b8ea19c71425b41c2ea539a293:557157901,2f5ce75ec58d43d0dc2d60a55385684e:-1301791221,364aab1a0d8d43d0d4d0930e4ceafef4:2064330864,f5986b167d8d43d08cbaeb5d65be2158:-1159887942,7667af52988d43d0884a3fed373ef100:-602568652,8c576b521e8d43d069b9ad250aa1b95a:370007187,ecb66312a18d43d0304102d4ae8911e1:-1507231643,66862fde684d43d05226f51c4d13530b:400074148,9836af9eb04d43d0483d6d56cdf89ca5:-602568652,c6f5679eca4d43d005a013ddf0c509fa:1907183575,31b5eb5e0c4d43d0082635bbe4da27f7:-456369612,8c4b9b56ee0d43d0f07ab6b7984d82b9:1628469589,e0ca1b16b60d43d0fc244ec5e2c1e099:1155751267,939a93162c0d43d03278cd225c0046e3:-1389259868,c17a1fd2120d43d04376eca00142133e:1645534222,b74a97d2a00d43d03c599d4eb675a15e:1309082298,4596539a06c943d014ca856ccbf5d8bd:348603715,22251b968bc943d02defcd2dda5a8515:1421490591</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Pharmacy Management System">7f81de0ac30d8f905619533ed4013110</application>
+<category>customer</category>
+<comments/>
+<name>sc_cat_item_10547956c34d03d05619533ed401318d</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item"><sc_cat_item action="INSERT_OR_UPDATE"><access_type>restricted</access_type><active>true</active><availability>on_desktop</availability><billable>false</billable><category display_value="Pharmacy Services">7ed3b516c34d03d05619533ed4013100</category><cc_render_type/><checked_out>false</checked_out><cost>0</cost><custom_cart/><delivery_plan/><delivery_plan_script/><delivery_time>1970-01-03 00:00:00</delivery_time><description/><display_price_property>non_zero</display_price_property><entitlement_script/><flow_designer_flow display_value="CurVia_MedicineRequest">cc600c2ec34183d05619533ed40131e1</flow_designer_flow><fulfillment_automation_level>unspecified</fulfillment_automation_level><group/><hide_sp>false</hide_sp><icon>711535d6c34d03d05619533ed40131cb</icon><ignore_price>true</ignore_price><image/><location/><make_item_non_conversational>false</make_item_non_conversational><mandatory_attachment>false</mandatory_attachment><meta/><mobile_hide_price>false</mobile_hide_price><mobile_picture/><mobile_picture_type>use_desktop_picture</mobile_picture_type><model/><name>Curvia_MedicineRequest</name><no_attachment_v2>true</no_attachment_v2><no_cart>false</no_cart><no_cart_v2>true</no_cart_v2><no_delivery_time_v2>true</no_delivery_time_v2><no_order>false</no_order><no_order_now>false</no_order_now><no_proceed_checkout>false</no_proceed_checkout><no_quantity>false</no_quantity><no_quantity_v2>false</no_quantity_v2><no_save_as_draft>true</no_save_as_draft><no_search>false</no_search><no_wishlist_v2>false</no_wishlist_v2><omit_price>false</omit_price><order>0</order><ordered_item_link/><owner display_value="Admin User">6816f79cc0a8016401c5a33be04be441</owner><picture>d6718ce5c3158f145619533ed40131dd</picture><preview>JavaScript: popupOpenStandard("com.glideapp.servicecatalog_cat_item_view.do?v=1&amp;sysparm_id=10547956c34d03d05619533ed401318d&amp;sysparm_preview=true", "summary");</preview><price>0</price><published_ref/><recurring_frequency/><recurring_price>0</recurring_price><request_method/><roles/><sc_catalogs>e0d08b13c3330100c8b837659bba8fb4</sc_catalogs><sc_ic_item_staging/><sc_ic_version/><sc_template/><short_description>Request your medicine online for pickup</short_description><show_variable_help_on_load>false</show_variable_help_on_load><start_closed>false</start_closed><state>published</state><sys_class_name>sc_cat_item</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-05-26 14:32:49</sys_created_on><sys_id>10547956c34d03d05619533ed401318d</sys_id><sys_mod_count>87</sys_mod_count><sys_name>Curvia_MedicineRequest</sys_name><sys_package display_value="Pharmacy Management System" source="x_1970979_pharma_0">7f81de0ac30d8f905619533ed4013110</sys_package><sys_policy/><sys_scope display_value="Pharmacy Management System">7f81de0ac30d8f905619533ed4013110</sys_scope><sys_update_name>sc_cat_item_10547956c34d03d05619533ed401318d</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-06-05 08:30:15</sys_updated_on><taxonomy_topic/><template/><template_manager_roles/><type>item</type><use_sc_layout>true</use_sc_layout><vendor/><version>88</version><visible_bundle>true</visible_bundle><visible_guide>true</visible_guide><visible_standalone>true</visible_standalone><workflow/></sc_cat_item><sys_translated_text action="delete_multiple" query="documentkey=10547956c34d03d05619533ed401318d"/><fx_price action="delete_multiple" query="id=10547956c34d03d05619533ed401318d"/><fx_price action="INSERT_OR_UPDATE"><amount>0</amount><currency display_value="GBP">GBP</currency><field>price</field><id>10547956c34d03d05619533ed401318d</id><parent/><reference_amount>0</reference_amount><reference_currency display_value="USD">USD</reference_currency><sys_created_by>admin</sys_created_by><sys_created_on>2026-05-26 14:32:49</sys_created_on><sys_id>930535d6c34d03d05619533ed401317b</sys_id><sys_mod_count>1</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-05-27 22:02:35</sys_updated_on><table>sc_cat_item</table><type>calculated</type></fx_price><fx_price action="INSERT_OR_UPDATE"><amount>0</amount><currency display_value="GBP">GBP</currency><field>recurring_price</field><id>10547956c34d03d05619533ed401318d</id><parent/><reference_amount>0</reference_amount><reference_currency display_value="USD">USD</reference_currency><sys_created_by>admin</sys_created_by><sys_created_on>2026-05-26 14:32:49</sys_created_on><sys_id>1b0535d6c34d03d05619533ed401317c</sys_id><sys_mod_count>1</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-05-27 22:02:48</sys_updated_on><table>sc_cat_item</table><type>calculated</type></fx_price><sys_attachment action="INSERT_OR_UPDATE"><average_image_color>#9999cc</average_image_color><chunk_size_bytes>700000</chunk_size_bytes><compressed>true</compressed><content_type>image/png</content_type><encryption_context/><file_name>icon</file_name><hash>ab85e72d8b0ab87137dde916cee5667569fcd7aa7e49344086e64aebaf85e13d</hash><image_height>148</image_height><image_width>205</image_width><size_bytes>2919</size_bytes><size_compressed>2942</size_compressed><state>available</state><sys_created_by>admin</sys_created_by><sys_created_on>2026-05-26 14:33:00</sys_created_on><sys_id>711535d6c34d03d05619533ed40131cb</sys_id><sys_mod_count>3</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-05-26 14:33:00</sys_updated_on><table_name>ZZ_YYsc_cat_item</table_name><table_sys_id>10547956c34d03d05619533ed401318d</table_sys_id></sys_attachment><sys_attachment_doc action="INSERT_OR_UPDATE"><data>H4sIAAAAAAAA/w==</data><length>16</length><position>0</position><sys_attachment display_value="icon" sys_id="711535d6c34d03d05619533ed40131cb">711535d6c34d03d05619533ed40131cb</sys_attachment><sys_created_by>admin</sys_created_by><sys_created_on>2026-05-26 14:33:00</sys_created_on><sys_id>351535d6c34d03d05619533ed40131cb</sys_id></sys_attachment_doc><sys_attachment_doc action="INSERT_OR_UPDATE"><data>AWcLmPSJUE5HDQoaCgAAAA1JSERSAAAAzQAAAJQIAwAAAAfjXWQAAAD/UExURf///wAAANBhYejYkZi76a/QkvXz+Ovbk/v7+9hlZSAPD9rLiGxkQ8tfX3c3N7tXVzIXF11dXe7u7mRdZV5YO3hvS1tVXOHSjKyhbI+pdyAmG5ZHR7TWluLi4g0GBnWQtCMrNmdnZ26IqaenpzAwMFYoKKJMTBYVF7e3uMnJyWkxMc1VVb3T8OCfn4mp0hkgJj4+PnV1dUkiItbW1h4eHj0cHE9PT0dVO5qamouLi4CAgK5RUTtGMYM9PSYjFzg0I4V8U527gzA5KFFLM0M/KpyRYsa4fBQUDIOcbml9WHSKYVhpSjpJW1drhWR7mTI+TUlacae500lQWaBxcolhYrV9UvcAAAojSURBVHic3Z1rX9u4EoexsxAbSExyoLRQp6S52ZyzbYID5AKUS1u2e8q2Z89+/8+ytkbyJb6NZCX2b/8veEHsoMcjjUajsdjaypbWVVxNX/2LX6863q1zLecvbFQzr0lK/xW/puTOWdkAEdlKIY3tsgEiancL0Swq1dG2tpxxAZgrp+zmr0izr8RhqtXPiJy5mHnGvapZhqhtWn2veU+vcfpMWGyzYmPGl0ass1+r1xA6PvQubrXLbnSq2kBzjIGp/6No/lm2oTRXladBwdSO94kXqC6NQ3zaPcoJ1Gr33sXT6tLYHs0zkqb+hUw3ZtmNTtVs5Dbv7jWS5jWhqWAcQNX1mvf5K5LmK6Gp1somJJOEak+4ybNW3yPBQL+qND2y8tpHOoH68X2VuxqscbDDxh84V2W3O1k9zwcon7Aw7sB5IjiV9NEmMQ16tvEEPnpadsuTBImOOzyLaxziByqW4iCyIPnyhcM0vnEqt1yzYeGJHzVgHBg544rhOJAV6CBnTh/n9R34tUrhsBQHXz9zaWr3JNWptCqEw9JPR7iVTRhn71CpGA4dM8rhHqdpan58U52xUwTGw/lUJRyrEEwIZ1qBpQ7k0NzQWRAmhFN+jEMnTWHLEJzjJ4pTcmdjljk8FocJebZycWwpMB7OPsw7/RJx2K7NfkGYEE552UKtR2GQa+ccHHBsvbJo2n0aARSHCXC6Zflpu7A3i+IQR923SqJZEBp0HiAX50upa7erYrNmjKZGaEpKsGkdeaMGcJ69L5yU49U08ijvJdJ8wroBzZl3SRDSn8wk7TSWRaPZEyWihSMByKeRJgxN20rY+m7Zhbsn0Bx93ZOl43wazW7FWchoKxoSAc2nfWk6usujac+myTDePFWsu2lpX1xMGTRmaMB0LgcXFxe7oRtnhXrbxmkcv5ftNk+HS8PVcnh74d+5KIKzaRqTVfJc3hoNXddVVfV+GsOBDJwN0/gwt4bqkTDpauP0gH40L0rT2ZWnTgYNgzkYqnEZ1Dwj8ZAVaJqe0SXpIJ2GwVwYegKNrp/Dx+IpYEaT8O1iyqBxMmG8e6l1hGPWDdIwb5YK446eS3LFVHQbdXM0+TDuzQYkFuaCfm1jNBgY9+5TcpFo1mdTNDgY93YIDATd2oZosDCqfkuuE1ztYWhiTpibJts1R2TAlWuj0ZfN84iye34CDQeMqoKXFhs4+TT6kIUcTJdZjUqg4YJRbwsMnHyaRlNZ1TkXjYkdMyDwamLZUgTNeYxmwEPDZxlVXZKrxV5KWDsN2pv5NGQCnayVZjQGjThpuGFUY3f9NH2TCGoK8DROlxeG9jSxwBNNs7XjCUY0mobBZHrBFQ3JHWKJ7LXS+N5siYehPm1tHlqYRghGBaezrtlTmEYMpkGcgGC9+PpoGIyyy0Ojw7CRHHWGQsxmAk16BMpozCA7u8vhA3TIrAkuPpNpdHU5ZDodxGgugk+X6kpLgWZid5WQ0Dg6+Oe+4L5pMo2hrCpCE9bBSj8CmjGtQehw4uhww0wwzZFIo69GzRk0ynnGvTe/XXPh0ByUcPlEsm1iTc6gGRipNDcPbx8oDsoV0KyAsGmSaRpxmgXQ7Exin6TTPD683fZxDpb5NKe0FES42iCDpjPyNe2aALNjt4LfjrJpXMtsbwc4l7k4p5Dh6Iu/lJBBM7ECMZidHSf023EWzc0bD4YDh6bVi5S1ZNDMdoLLdgL5fVrbasVpWH7Ph4ngZI0dCtMRzQzm0bR3spVAo7NEfwDj4dywsZOOQ7uZjN0oWTSJMC7O9iPFSc2nDymM2CptLTQ+zGMExrMOxekk49DozI2IirDIpQlgHqIwnnVOaHsbCTg+zKQYjEyaDBgPh46dhKjAhyl8ekQGTbfny3J8BMcKfhvx0JkwIc8Wi6gDGEm1HLmxwJThWLHKBUqTA7Mdjgr0KAz49FFxGHRk09IITDstTsuFSZ1GqWuWASMr6kxxzQgcOmlKgUlZEQxibU6nIffqCJjEqIBVCUiBSVutxbK1aTQdsv+hNzEwoXmH4QylwqTlBRqGr2U8y3ERfGo0QgM5DyaEA1GBHwFIKpzMz3I0krIcajjLoTcukTAhHNdRs4egdGXVtMrIQNF+dvJbPkwoZlMaS0UyjAwa3QDTfMPAhKMCqmKBpnQaMM01imU7tECQO2bk0OgN4p2fUf2M4lz7LB1J3oyXRnO1lUQDXvaGthQlH2daZKVZgMYmshJ2o2AT+fe3Lsn2w8MblL49A82VZUfkmO0iowhL0+mD4juFdF/UZXl48/t/rx9PMHqmvnk67kc0bi1mlvjrLsV3cSFCO3n75tv1SexKEU1b8/VVdOXQ6Evin2++PcYuE9dYsM4bUZlyG/tjzQgNcQKs60jjWayHhj78kHYjH7NYS7bGAsMHUzXUGJ5GpEcddITm7PvLH+/T9PLRu2Sw8nUh3Q5COXmBekhUfVpWQVeoqGj04/2HX7L07sy9qnObWbJrLAes0065N6YLV9vRceOyfH+XieLTNLP3Plygc2pu7vNMC9Mwl3f2Rx4LksbjGdL3CngrowvTUI/3I9cweBovLKfPiDMkLUqzhE7xI3vA8NK4ngdwRj2uQKcgDcTPSBgOGhaZc/ppShOvRMWJLh8x3YyPxu1sYHWuPVCgOV8aYoIHiHAA3DSsdICrRgVodg8ERaaGM1w/46Rh9UM8k46Mt4mwpuGlAeO0OLqaBBq0aXhpqCPg6GoSaF7WRUPnMo6AQAINuqPx0uhQfsvxHhvQfD4SEjkv6SPSPQvQGCTA4dgLpe9J14ReiT7y7j1bGw2NAcfcNELvsNfJATbIOECIhuQdR5uk+b5uGoXDRZN9zCOxk7mqR0PSfdhjbVdoyHEvqLWAIA1Ns+I1J/hCZ6bU79fr02iqjuecVofQ3Il0NXoA8ft10egGVLxy0MCB/R5OnReovkdufVmbbaAsgivXwf6zype9Y17VFT4XzRungRPgWq+1/VLNp0NO7T/zdTVOGlivjfk2DUzxf0UCQvtoThoIOnnfxHHiJQ18whqHj4Yupbnz6+Y89RQTlLArHL6VNKxuBLZF26sn/3Dqp3wa+orxSGgrp+1Y80m3xS065r7LpmFl68Lv5mttAZkLDutwZAdvYdBs+lxjdjwFZtbB0uhqE/YJ+HcJisqGAnzlY75nw2bV/f2vAofBiMovjjzL2b7x928yzdJY+gcPlQATnMXq2ufnu3cxog++3oNtGoFWWIzhsBnsrpV03J8VjiY60Sj0w8+zj0zQJzsH/kk+g+gpPafhN5H6pZ2i7yzCs08kJfWSOVFdGP8OtAzDtMo6JHPLO5G1GzTkz/8E+t+fmTSj//8a6K9gl348K/ecadPyeRakwghkZgcZYyu4VPPHX2sm4xDCgjx2r+s93avIY42Xg4cVGegaWdVfza1q/C86rW3alhWNRTSnl66VcxPbtmWb1UBJlZausptWGf0NMs7vVu8O0PcAAAAASUVORK5CYIKRGWC6ZwsAAA==</data><length>3912</length><position>1</position><sys_attachment display_value="icon" sys_id="711535d6c34d03d05619533ed40131cb">711535d6c34d03d05619533ed40131cb</sys_attachment><sys_created_by>admin</sys_created_by><sys_created_on>2026-05-26 14:33:00</sys_created_on><sys_id>f51535d6c34d03d05619533ed40131cb</sys_id></sys_attachment_doc><sys_attachment action="INSERT_OR_UPDATE"><average_image_color>#669999</average_image_color><chunk_size_bytes>700000</chunk_size_bytes><compressed>true</compressed><content_type>image/png</content_type><encryption_context/><file_name>picture</file_name><hash>b9591b2696d884118a334fe3de8d9461708f87c30b097f8d2833caca9c19bc36</hash><image_height>148</image_height><image_width>167</image_width><size_bytes>3471</size_bytes><size_compressed>3494</size_compressed><state>available</state><sys_created_by>admin</sys_created_by><sys_created_on>2026-06-05 08:28:07</sys_created_on><sys_id>d6718ce5c3158f145619533ed40131dd</sys_id><sys_mod_count>1</sys_mod_count><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-06-05 08:30:14</sys_updated_on><table_name>ZZ_YYsc_cat_item</table_name><table_sys_id>10547956c34d03d05619533ed401318d</table_sys_id></sys_attachment><sys_attachment_doc action="INSERT_OR_UPDATE"><data>H4sIAAAAAAAA/w==</data><length>16</length><position>0</position><sys_attachment display_value="picture" sys_id="d6718ce5c3158f145619533ed40131dd">d6718ce5c3158f145619533ed40131dd</sys_attachment><sys_created_by>admin</sys_created_by><sys_created_on>2026-06-05 08:28:07</sys_created_on><sys_id>1a718ce5c3158f145619533ed40131e1</sys_id></sys_attachment_doc><sys_attachment_doc action="INSERT_OR_UPDATE"><data>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</data><length>4648</length><position>1</position><sys_attachment display_value="picture" sys_id="d6718ce5c3158f145619533ed40131dd">d6718ce5c3158f145619533ed40131dd</sys_attachment><sys_created_by>admin</sys_created_by><sys_created_on>2026-06-05 08:28:07</sys_created_on><sys_id>d6718ce5c3158f145619533ed40131e2</sys_id></sys_attachment_doc></record_update>]]></payload>
+<payload_hash>-1711284334</payload_hash>
+<remote_update_set display_value="CB_Curvia_MedicineRequest_2026-06-05 08:30:12">8874b54ac3ddc3545619533ed4013154</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-06-07 06:07:22</sys_created_on>
+<sys_id>5c74358ac3ddc3545619533ed4013122</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19e96e7843e0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-06-07 06:07:22</sys_updated_on>
+<table/>
+<target_name>Curvia_MedicineRequest</target_name>
+<type>Catalog Item</type>
+<update_domain>global</update_domain>
+<update_guid>f1f1486938158f14433890353af4516c</update_guid>
+<update_guid_history>f1f1486938158f14433890353af4516c:-1711284334,2df108692d158f14feb9cbc33364cc6f:404964705,6e5d7b9dbbd18f1414b2608aeea3812e:-867209549,9fcbff99e2d18f147bb0180e942f369f:1618403476,d55b7f593bd18f14081f0b05a25e9db0:-190950795,0b0a3f95d0d18f148dfe8217641b7dec:-2000305066,7569375549d18f14526383332267dfb8:485307959,37b8fbd16dd18f14039308cd34e3bdeb:-1324046312,8efcafd59e518f14a546adafb55980e3:1161566713,cacce7d5c1518f145cfb4af7c443e97c:-647787558,449caf9552518f145571ae849f5b54a5:-1798875856,4e4be3d19f518f14abaffc158ae52bbb:686737169,bf05eb1511118f14df837e290150e6ea:-1122617102,c6a46fd1be118f14154e140a60152124:1362995923,306423d1a0118f14643b27d799db1640:-446358348,3cb3a3519a118f14197edda049bea8fd:2039254677,c3c26f9d32dd4f14fad32561e2756ad5:229900406,aec26f9d36dd4f14b02dcdcb29443b33:1981014019,fedb979d399d4f140294fb006105d347:613266333,82bb139d109d4f14cbe46c1974b32a25:-1196087938,39bb139d589d4f14743f0d3429c71512:1086451846,6e6b175d9b9d4f14b9724a2196da8f30:-64636452,6e0d18b80319c7142fd027523a77d483:-1873990723,8a0dd4b86119c71433f8da41de77d2ed:-1323778051,fcd974f660cd07d0865b0602b8c35ee9:-137744784,eca5283a0b0d07d0b99875ab97742e3a:-1947099055,1995643a9a0d07d0f9660ac381c520ec:1057826002,07e3e036d50d07d0de0cd376651088ff:-1783809848,6a43e4b2b50d07d0c4d98caf63180dcb:701803177,20c2a472770d07d0de022e5c0ffbc7b5:-1493421864,1382ac32eb0d07d08b53b549485c1ba6:-973021404,75a16cbedac907d0d38bb4ae96904b09:1512591621,3481e4be6ac907d001a6ccbe6206ac53:-296762650,3671a4be3cc907d0609cdd5f2c9cdc53:-2106116921,3271a4beafc907d04bfb70682a18b71b:379496104,257124be92c907d09d2881a514f5b8ff:-1429858167,8d31a87eecc907d031520dbaf90ba8fa:1055754858,84e0ac3eb5c907d0b0bac56bced8e14f:1869879125,e790243ee3c907d077b8a023b30c890a:-1904687711,ca60e8fabcc907d04be421a30ca53c2d:580925314,4a60e8fa95c907d00d1598c38ff56514:214080330,112e5c765ac907d0d2912da69fb964dd:-1595273941,b42e5c7637c907d098d64db98bae2845:-654545723,437dc8beb50907d02b455a35391c00cf:724902787,856dc4be660907d0990661ad183ba3b4:-1084451484,72ac0c3e710907d04f6031664c8783e0:1401161541,688c843eb50907d039a2508680c7326d:-651075813,ce4c0cfa5b0907d0d6ead84953ef9380:2141642582,7d1c04fac40907d016d71756b4877435:683448914,81cfbfaed58507d027d94e0cdebcd723:-101185935,e9b370aae64983d06fbe7aac5842c5cc:-2110046581,5a70f0a2f84983d0169cef78c8110dc9:424104176,a4eeec6e4e0983d00e30e9ef8b76c40b:1280752836,e919e0aec4c583d0c569b803fd0857e8:1051825198,db5ce75e748d43d0e9fbd8796b37874a:-1765416138,f24aab1a658d43d04c5fa9355ac608f0:720196887,b5986b16848d43d074247743ac3fc154:-1089157384,36676f520e8d43d0a91239357cb322fc:1396455641,4c576b52be8d43d0e38f31550e7c7556:245367343,acb66312648d43d0c8d72972ceba21dd:-1563986928,26862fde054d43d0f5082817a887f307:921626097,5036af9ed64d43d07a0e99b1f8db2e3e:-887728174,86f5679e804d43d0c847b3bb7c6b5ef6:1597884851,bdb5eb5edc4d43d053c1979af9912bf2:-211469420,5ffbd7d6c10d43d04acd0ba453aa36d3:-2020823691,a0cb9f965c0d43d08851522ede905f52:464789334,4c4b9b56eb0d43d0a895cc7862f85cb5:-1344564937,24ca17164a0d43d0c88d73b1e848bd99:1141048088,539a9316b30d43d0de14759d69acd9df:-10040210,817a1fd2210d43d057abcf6e4445f63a:-1819394481,234a97d20f0d43d016bf09f60192515a:666218544,4d975b1e7dc943d05a38dbff735f7897:-1143135727,d177571ec1c943d0eb4a4b7a3c359a08:1342477298,4196539a03c943d02b4ee354c00e62b9:-466876973,2a251b96a5c943d0ca353d21cf88f210:2018736052,0a234b1e6c0943d0c8e949c280812ceb:209381781,8e234b1ed70943d0cb74daa15f0036d2:862849346,a1dfb912a0cd03d0229d5d8d18c397c6:-1585895683,c97b3596b08d03d011acd4259f54bbb8:533123874,c36bf1964a8d03d05e1014a3a02d2f85:596386496,496bb196ed8d03d0070bc73c019aa150:-1716327425,7a5bfd56578d03d0c5d67c35f9415be7:265925950,d02bb556888d03d09d56e4a56f9319b3:-2046787971,720afd929f8d03d03561f70fb7f4a009:-64534596,1ff93d924c8d03d019a77e4f64bf7a65:1917718779,9b593552e08d03d092fed782104af88b:-394995142,ca15b5d6894d03d0380243388cb31398:342616500,3515b5d62a4d03d0980b6c97f028986d:-18271525,2b0535d6e04d03d0172d9e79f9b668a1:-626341747,9b0535d61e4d03d0cc3853738bf6a4ad:-30693407</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Pharmacy Management System">7f81de0ac30d8f905619533ed4013110</application>
+<category>customer</category>
+<comments/>
+<name>item_option_new_067e5cb6c3c907d05619533ed40131c1</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="item_option_new"&gt;&lt;item_option_new action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;attributes/&gt;&lt;cat_item display_value="Curvia_MedicineRequest"&gt;10547956c34d03d05619533ed401318d&lt;/cat_item&gt;&lt;category/&gt;&lt;choice_direction&gt;down&lt;/choice_direction&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;conversational_label/&gt;&lt;create_roles/&gt;&lt;default_html_value/&gt;&lt;default_value/&gt;&lt;delete_roles/&gt;&lt;delivery_plan/&gt;&lt;description/&gt;&lt;disable_initial_slot_fill&gt;false&lt;/disable_initial_slot_fill&gt;&lt;display_title&gt;false&lt;/display_title&gt;&lt;do_not_select_first&gt;false&lt;/do_not_select_first&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;dynamic_value_dot_walk_path/&gt;&lt;dynamic_value_field/&gt;&lt;enable_also_request_for&gt;false&lt;/enable_also_request_for&gt;&lt;example_text/&gt;&lt;field/&gt;&lt;global&gt;false&lt;/global&gt;&lt;help_tag&gt;More information&lt;/help_tag&gt;&lt;help_text/&gt;&lt;hidden&gt;false&lt;/hidden&gt;&lt;include_none&gt;false&lt;/include_none&gt;&lt;instructions/&gt;&lt;layout&gt;normal&lt;/layout&gt;&lt;list_table/&gt;&lt;lookup_dependent_question/&gt;&lt;lookup_label&gt;medicine_name&lt;/lookup_label&gt;&lt;lookup_price&gt;price&lt;/lookup_price&gt;&lt;lookup_source/&gt;&lt;lookup_table&gt;x_1970979_pharma_0_pharmacy_medicine&lt;/lookup_table&gt;&lt;lookup_unique&gt;false&lt;/lookup_unique&gt;&lt;lookup_value&gt;medicine_name&lt;/lookup_value&gt;&lt;macro/&gt;&lt;macroponent/&gt;&lt;mandatory&gt;true&lt;/mandatory&gt;&lt;map_to_field&gt;false&lt;/map_to_field&gt;&lt;mask_use_confirmation&gt;false&lt;/mask_use_confirmation&gt;&lt;mask_use_encryption&gt;false&lt;/mask_use_encryption&gt;&lt;name&gt;medicine_name&lt;/name&gt;&lt;not_available_conversation&gt;false&lt;/not_available_conversation&gt;&lt;order&gt;100&lt;/order&gt;&lt;post_insert_script/&gt;&lt;price_if_checked&gt;0&lt;/price_if_checked&gt;&lt;pricing_implications&gt;false&lt;/pricing_implications&gt;&lt;published_ref/&gt;&lt;question_text&gt;Medicine Name&lt;/question_text&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;read_script/&gt;&lt;rec_lookup_price/&gt;&lt;rec_price_if_checked&gt;0&lt;/rec_price_if_checked&gt;&lt;record/&gt;&lt;record_producer_table/&gt;&lt;reference/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;rich_text/&gt;&lt;roles_to_use_also_request_for/&gt;&lt;save_script&gt;&lt;![CDATA[/** This script is executed before the Record is generated
+* `current`- GlideRecord produced by Record Producer
+* Don't use `current.update()` or `current.insert()` as the record is generated by Record Producer
+* Don't use `current.setValue('sys_class_name', 'xxx')` as this will trigger reparent flow and can cause data loss
+* Avoid `current.setAbortAction()` and generate a separate record
+* Use `producer.var1` to access variables
+*/]]&gt;&lt;/save_script&gt;&lt;scale_max&gt;5&lt;/scale_max&gt;&lt;scale_min&gt;0&lt;/scale_min&gt;&lt;show_help&gt;false&lt;/show_help&gt;&lt;show_help_on_load&gt;false&lt;/show_help_on_load&gt;&lt;sp_widget/&gt;&lt;summary_macro/&gt;&lt;sys_class_name&gt;item_option_new&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-05-27 21:39:58&lt;/sys_created_on&gt;&lt;sys_id&gt;067e5cb6c3c907d05619533ed40131c1&lt;/sys_id&gt;&lt;sys_mod_count&gt;5&lt;/sys_mod_count&gt;&lt;sys_name&gt;Medicine Name&lt;/sys_name&gt;&lt;sys_package display_value="Pharmacy Management System" source="x_1970979_pharma_0"&gt;7f81de0ac30d8f905619533ed4013110&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Pharmacy Management System"&gt;7f81de0ac30d8f905619533ed4013110&lt;/sys_scope&gt;&lt;sys_update_name&gt;item_option_new_067e5cb6c3c907d05619533ed40131c1&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-06-05 06:14:02&lt;/sys_updated_on&gt;&lt;table/&gt;&lt;tooltip/&gt;&lt;topic_block/&gt;&lt;type&gt;18&lt;/type&gt;&lt;ui_page/&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;advanced&lt;/use_reference_qualifier&gt;&lt;validate_regex/&gt;&lt;variable_name/&gt;&lt;variable_set/&gt;&lt;variable_width/&gt;&lt;visibility&gt;1&lt;/visibility&gt;&lt;visible_bundle&gt;true&lt;/visible_bundle&gt;&lt;visible_guide&gt;true&lt;/visible_guide&gt;&lt;visible_standalone&gt;true&lt;/visible_standalone&gt;&lt;visible_summary&gt;true&lt;/visible_summary&gt;&lt;write_roles/&gt;&lt;/item_option_new&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=067e5cb6c3c907d05619533ed40131c1"/&gt;&lt;fx_price action="delete_multiple" query="id=067e5cb6c3c907d05619533ed40131c1"/&gt;&lt;fx_price action="INSERT_OR_UPDATE"&gt;&lt;amount&gt;0&lt;/amount&gt;&lt;currency display_value="USD"&gt;USD&lt;/currency&gt;&lt;field&gt;price_if_checked&lt;/field&gt;&lt;id&gt;067e5cb6c3c907d05619533ed40131c1&lt;/id&gt;&lt;parent/&gt;&lt;reference_amount&gt;0&lt;/reference_amount&gt;&lt;reference_currency display_value="USD"&gt;USD&lt;/reference_currency&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-05-27 21:39:58&lt;/sys_created_on&gt;&lt;sys_id&gt;8a60e8fac3c907d05619533ed4013117&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-05-27 21:39:58&lt;/sys_updated_on&gt;&lt;table&gt;item_option_new&lt;/table&gt;&lt;type&gt;calculated&lt;/type&gt;&lt;/fx_price&gt;&lt;fx_price action="INSERT_OR_UPDATE"&gt;&lt;amount&gt;0&lt;/amount&gt;&lt;currency display_value="USD"&gt;USD&lt;/currency&gt;&lt;field&gt;rec_price_if_checked&lt;/field&gt;&lt;id&gt;067e5cb6c3c907d05619533ed40131c1&lt;/id&gt;&lt;parent/&gt;&lt;reference_amount&gt;0&lt;/reference_amount&gt;&lt;reference_currency display_value="USD"&gt;USD&lt;/reference_currency&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-05-27 21:39:58&lt;/sys_created_on&gt;&lt;sys_id&gt;0a60e8fac3c907d05619533ed4013116&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-05-27 21:39:58&lt;/sys_updated_on&gt;&lt;table&gt;item_option_new&lt;/table&gt;&lt;type&gt;calculated&lt;/type&gt;&lt;/fx_price&gt;&lt;/record_update&gt;</payload>
+<payload_hash>933529545</payload_hash>
+<remote_update_set display_value="CB_Curvia_MedicineRequest_2026-06-05 08:30:12">8874b54ac3ddc3545619533ed4013154</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-06-07 06:07:22</sys_created_on>
+<sys_id>8c74358ac3ddc3545619533ed4013121</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19e96e781ac0000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-06-07 06:07:22</sys_updated_on>
+<table/>
+<target_name>Medicine Name</target_name>
+<type>Variable</type>
+<update_domain>global</update_domain>
+<update_guid>e5f10869b1158f14dc1091ac1b5790ef</update_guid>
+<update_guid_history>e5f10869b1158f14dc1091ac1b5790ef:933529545,7ac26f9d18dd4f144f8608d4f95ca488:933529545,5f82ac32ee0d07d0ab8d1f2dd6940baa:1018498411,75a16cbe24c907d05a217c4cebca9f0e:1506110095,7081e4be06c907d0a7962d3ac4043c58:1392306197,e790243e08c907d0d1cac95e41ceda0f:1800864661,8a60e8fa5fc907d0082e3e2aab29bd1f:-1154755182</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Pharmacy Management System">7f81de0ac30d8f905619533ed4013110</application>
+<category>customer</category>
+<comments/>
+<name>sc_cat_item_catalog_041f77d4c3dd07145619533ed4013129</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_catalog"><sc_cat_item_catalog action="INSERT_OR_UPDATE"><sc_cat_item display_value="Curvia_MedicineRequest">10547956c34d03d05619533ed401318d</sc_cat_item><sc_catalog display_value="Service Catalog">e0d08b13c3330100c8b837659bba8fb4</sc_catalog><sys_class_name>sc_cat_item_catalog</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-06-02 05:43:39</sys_created_on><sys_id>041f77d4c3dd07145619533ed4013129</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Service Catalog.Curvia_MedicineRequest</sys_name><sys_package display_value="Pharmacy Management System" source="x_1970979_pharma_0">7f81de0ac30d8f905619533ed4013110</sys_package><sys_policy/><sys_scope display_value="Pharmacy Management System">7f81de0ac30d8f905619533ed4013110</sys_scope><sys_update_name>sc_cat_item_catalog_041f77d4c3dd07145619533ed4013129</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-06-02 05:43:39</sys_updated_on></sc_cat_item_catalog></record_update>]]></payload>
+<payload_hash>-1006098916</payload_hash>
+<remote_update_set display_value="CB_Curvia_MedicineRequest_2026-06-05 08:30:12">8874b54ac3ddc3545619533ed4013154</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-06-07 06:07:22</sys_created_on>
+<sys_id>9074358ac3ddc3545619533ed4013123</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19e96e77bc00000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-06-07 06:07:22</sys_updated_on>
+<table/>
+<target_name>Service Catalog.Curvia_MedicineRequest</target_name>
+<type>Catalog Items Catalog</type>
+<update_domain>global</update_domain>
+<update_guid>1df1086958158f146648679c666e6e32</update_guid>
+<update_guid_history>1df1086958158f146648679c666e6e32:-1006098916,4c1f77d407dd0714ea28c9bbb24c652c:-1006098916</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Pharmacy Management System">7f81de0ac30d8f905619533ed4013110</application>
+<category>customer</category>
+<comments/>
+<name>item_option_new_4e7b975dc39d4f145619533ed40131e2</name>
+<payload>&lt;?xml version="1.0" encoding="UTF-8"?&gt;&lt;record_update table="item_option_new"&gt;&lt;item_option_new action="INSERT_OR_UPDATE"&gt;&lt;active&gt;true&lt;/active&gt;&lt;attributes/&gt;&lt;cat_item display_value="Curvia_MedicineRequest"&gt;10547956c34d03d05619533ed401318d&lt;/cat_item&gt;&lt;category/&gt;&lt;choice_direction&gt;down&lt;/choice_direction&gt;&lt;choice_field/&gt;&lt;choice_table/&gt;&lt;conversational_label/&gt;&lt;create_roles/&gt;&lt;default_html_value/&gt;&lt;default_value/&gt;&lt;delete_roles/&gt;&lt;delivery_plan/&gt;&lt;description/&gt;&lt;disable_initial_slot_fill&gt;false&lt;/disable_initial_slot_fill&gt;&lt;display_title&gt;false&lt;/display_title&gt;&lt;do_not_select_first&gt;false&lt;/do_not_select_first&gt;&lt;dynamic_default_value/&gt;&lt;dynamic_ref_qual/&gt;&lt;dynamic_value_dot_walk_path/&gt;&lt;dynamic_value_field/&gt;&lt;enable_also_request_for&gt;false&lt;/enable_also_request_for&gt;&lt;example_text/&gt;&lt;field/&gt;&lt;global&gt;false&lt;/global&gt;&lt;help_tag&gt;More information&lt;/help_tag&gt;&lt;help_text/&gt;&lt;hidden&gt;false&lt;/hidden&gt;&lt;include_none&gt;false&lt;/include_none&gt;&lt;instructions/&gt;&lt;layout&gt;normal&lt;/layout&gt;&lt;list_table/&gt;&lt;lookup_dependent_question/&gt;&lt;lookup_label/&gt;&lt;lookup_price/&gt;&lt;lookup_source/&gt;&lt;lookup_table/&gt;&lt;lookup_unique&gt;false&lt;/lookup_unique&gt;&lt;lookup_value/&gt;&lt;macro/&gt;&lt;macroponent/&gt;&lt;mandatory&gt;false&lt;/mandatory&gt;&lt;map_to_field&gt;false&lt;/map_to_field&gt;&lt;mask_use_confirmation&gt;false&lt;/mask_use_confirmation&gt;&lt;mask_use_encryption&gt;false&lt;/mask_use_encryption&gt;&lt;name&gt;notes&lt;/name&gt;&lt;not_available_conversation&gt;false&lt;/not_available_conversation&gt;&lt;order&gt;300&lt;/order&gt;&lt;post_insert_script/&gt;&lt;price_if_checked&gt;0&lt;/price_if_checked&gt;&lt;pricing_implications&gt;false&lt;/pricing_implications&gt;&lt;published_ref/&gt;&lt;question_text&gt;Notes&lt;/question_text&gt;&lt;read_only&gt;false&lt;/read_only&gt;&lt;read_roles/&gt;&lt;read_script/&gt;&lt;rec_lookup_price/&gt;&lt;rec_price_if_checked&gt;0&lt;/rec_price_if_checked&gt;&lt;record/&gt;&lt;record_producer_table/&gt;&lt;reference/&gt;&lt;reference_qual/&gt;&lt;reference_qual_condition/&gt;&lt;rich_text/&gt;&lt;roles_to_use_also_request_for/&gt;&lt;save_script&gt;&lt;![CDATA[/** This script is executed before the Record is generated
+* `current`- GlideRecord produced by Record Producer
+* Don't use `current.update()` or `current.insert()` as the record is generated by Record Producer
+* Don't use `current.setValue('sys_class_name', 'xxx')` as this will trigger reparent flow and can cause data loss
+* Avoid `current.setAbortAction()` and generate a separate record
+* Use `producer.var1` to access variables
+*/]]&gt;&lt;/save_script&gt;&lt;scale_max&gt;5&lt;/scale_max&gt;&lt;scale_min&gt;0&lt;/scale_min&gt;&lt;show_help&gt;false&lt;/show_help&gt;&lt;show_help_on_load&gt;false&lt;/show_help_on_load&gt;&lt;sp_widget/&gt;&lt;summary_macro/&gt;&lt;sys_class_name&gt;item_option_new&lt;/sys_class_name&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-06-05 05:43:08&lt;/sys_created_on&gt;&lt;sys_id&gt;4e7b975dc39d4f145619533ed40131e2&lt;/sys_id&gt;&lt;sys_mod_count&gt;2&lt;/sys_mod_count&gt;&lt;sys_name&gt;Notes&lt;/sys_name&gt;&lt;sys_package display_value="Pharmacy Management System" source="x_1970979_pharma_0"&gt;7f81de0ac30d8f905619533ed4013110&lt;/sys_package&gt;&lt;sys_policy/&gt;&lt;sys_scope display_value="Pharmacy Management System"&gt;7f81de0ac30d8f905619533ed4013110&lt;/sys_scope&gt;&lt;sys_update_name&gt;item_option_new_4e7b975dc39d4f145619533ed40131e2&lt;/sys_update_name&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-06-05 06:14:02&lt;/sys_updated_on&gt;&lt;table/&gt;&lt;tooltip/&gt;&lt;topic_block/&gt;&lt;type&gt;2&lt;/type&gt;&lt;ui_page/&gt;&lt;unique&gt;false&lt;/unique&gt;&lt;use_dynamic_default&gt;false&lt;/use_dynamic_default&gt;&lt;use_reference_qualifier&gt;simple&lt;/use_reference_qualifier&gt;&lt;validate_regex/&gt;&lt;variable_name/&gt;&lt;variable_set/&gt;&lt;variable_width/&gt;&lt;visibility&gt;1&lt;/visibility&gt;&lt;visible_bundle&gt;true&lt;/visible_bundle&gt;&lt;visible_guide&gt;true&lt;/visible_guide&gt;&lt;visible_standalone&gt;true&lt;/visible_standalone&gt;&lt;visible_summary&gt;true&lt;/visible_summary&gt;&lt;write_roles/&gt;&lt;/item_option_new&gt;&lt;sys_translated_text action="delete_multiple" query="documentkey=4e7b975dc39d4f145619533ed40131e2"/&gt;&lt;fx_price action="delete_multiple" query="id=4e7b975dc39d4f145619533ed40131e2"/&gt;&lt;fx_price action="INSERT_OR_UPDATE"&gt;&lt;amount&gt;0&lt;/amount&gt;&lt;currency display_value="USD"&gt;USD&lt;/currency&gt;&lt;field&gt;price_if_checked&lt;/field&gt;&lt;id&gt;4e7b975dc39d4f145619533ed40131e2&lt;/id&gt;&lt;parent/&gt;&lt;reference_amount&gt;0&lt;/reference_amount&gt;&lt;reference_currency display_value="USD"&gt;USD&lt;/reference_currency&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-06-05 05:43:08&lt;/sys_created_on&gt;&lt;sys_id&gt;79bb139dc39d4f145619533ed4013115&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-06-05 05:43:08&lt;/sys_updated_on&gt;&lt;table&gt;item_option_new&lt;/table&gt;&lt;type&gt;calculated&lt;/type&gt;&lt;/fx_price&gt;&lt;fx_price action="INSERT_OR_UPDATE"&gt;&lt;amount&gt;0&lt;/amount&gt;&lt;currency display_value="USD"&gt;USD&lt;/currency&gt;&lt;field&gt;rec_price_if_checked&lt;/field&gt;&lt;id&gt;4e7b975dc39d4f145619533ed40131e2&lt;/id&gt;&lt;parent/&gt;&lt;reference_amount&gt;0&lt;/reference_amount&gt;&lt;reference_currency display_value="USD"&gt;USD&lt;/reference_currency&gt;&lt;sys_created_by&gt;admin&lt;/sys_created_by&gt;&lt;sys_created_on&gt;2026-06-05 05:43:08&lt;/sys_created_on&gt;&lt;sys_id&gt;f5bb139dc39d4f145619533ed4013114&lt;/sys_id&gt;&lt;sys_mod_count&gt;0&lt;/sys_mod_count&gt;&lt;sys_updated_by&gt;admin&lt;/sys_updated_by&gt;&lt;sys_updated_on&gt;2026-06-05 05:43:08&lt;/sys_updated_on&gt;&lt;table&gt;item_option_new&lt;/table&gt;&lt;type&gt;calculated&lt;/type&gt;&lt;/fx_price&gt;&lt;/record_update&gt;</payload>
+<payload_hash>-2075025726</payload_hash>
+<remote_update_set display_value="CB_Curvia_MedicineRequest_2026-06-05 08:30:12">8874b54ac3ddc3545619533ed4013154</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-06-07 06:07:22</sys_created_on>
+<sys_id>c074358ac3ddc3545619533ed4013122</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19e96e783040000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-06-07 06:07:22</sys_updated_on>
+<table/>
+<target_name>Notes</target_name>
+<type>Variable</type>
+<update_domain>global</update_domain>
+<update_guid>65f14869a6158f143a6bc716c9e98841</update_guid>
+<update_guid_history>65f14869a6158f143a6bc716c9e98841:-2075025726,7ac26f9de9dd4f149c2e3294d1d62960:-2075025726,fedb979d119d4f14131d26dcf465d34c:1440336451,f1bb139d579d4f14cfc0778c478c2d1e:1837220569</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+<sys_update_xml action="INSERT_OR_UPDATE">
+<action>INSERT_OR_UPDATE</action>
+<application display_value="Pharmacy Management System">7f81de0ac30d8f905619533ed4013110</application>
+<category>customer</category>
+<comments/>
+<name>sc_cat_item_category_df0535d6c34d03d05619533ed4013185</name>
+<payload><![CDATA[<?xml version="1.0" encoding="UTF-8"?><record_update table="sc_cat_item_category"><sc_cat_item_category action="INSERT_OR_UPDATE"><sc_cat_item display_value="Curvia_MedicineRequest">10547956c34d03d05619533ed401318d</sc_cat_item><sc_category display_value="Pharmacy Services">7ed3b516c34d03d05619533ed4013100</sc_category><sys_class_name>sc_cat_item_category</sys_class_name><sys_created_by>admin</sys_created_by><sys_created_on>2026-05-26 14:32:49</sys_created_on><sys_id>df0535d6c34d03d05619533ed4013185</sys_id><sys_mod_count>0</sys_mod_count><sys_name>Pharmacy Services.Curvia_MedicineRequest</sys_name><sys_package display_value="Pharmacy Management System" source="x_1970979_pharma_0">7f81de0ac30d8f905619533ed4013110</sys_package><sys_policy/><sys_scope display_value="Pharmacy Management System">7f81de0ac30d8f905619533ed4013110</sys_scope><sys_update_name>sc_cat_item_category_df0535d6c34d03d05619533ed4013185</sys_update_name><sys_updated_by>admin</sys_updated_by><sys_updated_on>2026-05-26 14:32:49</sys_updated_on></sc_cat_item_category></record_update>]]></payload>
+<payload_hash>339284012</payload_hash>
+<remote_update_set display_value="CB_Curvia_MedicineRequest_2026-06-05 08:30:12">8874b54ac3ddc3545619533ed4013154</remote_update_set>
+<replace_on_upgrade>false</replace_on_upgrade>
+<sys_created_by>admin</sys_created_by>
+<sys_created_on>2026-06-07 06:07:22</sys_created_on>
+<sys_id>d474358ac3ddc3545619533ed4013123</sys_id>
+<sys_mod_count>0</sys_mod_count>
+<sys_recorded_at>19e96e77c250000001</sys_recorded_at>
+<sys_updated_by>admin</sys_updated_by>
+<sys_updated_on>2026-06-07 06:07:22</sys_updated_on>
+<table/>
+<target_name>Pharmacy Services.Curvia_MedicineRequest</target_name>
+<type>Catalog Item Category</type>
+<update_domain>global</update_domain>
+<update_guid>5df10869fd158f14f6d339df1fed1539</update_guid>
+<update_guid_history>5df10869fd158f14f6d339df1fed1539:339284012,170535d6f74d03d0391a48b0c944d88b:339284012</update_guid_history>
+<update_set display_value=""/>
+<view/>
+</sys_update_xml>
+</unload>

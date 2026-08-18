@@ -360,25 +360,7 @@ CurVia/
 │   └── sys_remote_update_set_global.xml     ← Global scope rules
 ├── 📚 documentation/
 │   ├── CurVia_Full_Documentation.pdf        ← Complete technical docs
-├── 🖼️ screenshots/
-│   ├── portal/
-│   │   ├── login.png
-│   │   ├── welcome.png
-│   │   ├── medicine_request.png
-│   │   ├── my_requests.png
-│   │   └── my_approvals.png
-│   ├── flows/
-│   │   ├── main_approval_flow.png
-│   │   ├── wrong_medicine_flow.png
-│   │   └── sla_flows.png
-│   ├── forms/
-│   │   ├── medicine_form.png
-│   │   ├── complaint_form.png
-│   │   └── reorder_form.png
-│   └── dashboard/
-│       └── pharmacy_dashboard.png
-└── 🎨 assets/
-    └── curvia_logo.png
+
 ```
 
 ---
